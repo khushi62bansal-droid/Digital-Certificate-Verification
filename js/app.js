@@ -61,3 +61,19 @@ function showMessage(elementId, message, success = false) {
     element.textContent = message;
     element.style.color = success ? "#15803d" : "#dc2626";
 }
+
+
+// Read-only blockchain connection (No MetaMask required)
+async function connectReadOnly() {
+    const provider = new ethers.JsonRpcProvider(
+        "http://127.0.0.1:8545"
+    );
+
+    const contract = new ethers.Contract(
+        CONTRACT_ADDRESS,
+        CONTRACT_ABI,
+        provider
+    );
+
+    return { provider, contract };
+}

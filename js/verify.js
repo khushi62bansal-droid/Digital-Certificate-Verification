@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             // Connect to MetaMask and smart contract
-            const { contract } = await connectWallet();
+            const { contract } = await connectReadOnly();
 
             const result = await contract.verifyCertificate(hash);
 
