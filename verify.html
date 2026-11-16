@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Certificate | CertiChain</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Certi<span>Chain</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="verify.html">Verify Certificate</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <div class="dashboard-heading">
+            <p class="tagline">PUBLIC VERIFICATION</p>
+            <h1>Verify Your Certificate</h1>
+            <p>Upload your certificate PDF to check its authenticity.</p>
+        </div>
+
+        <section class="form-card verification-card">
+            <h2>Certificate Verification</h2>
+
+            <form id="verifyForm">
+                <label for="verificationFile">Upload Certificate (PDF)</label>
+                <input type="file" id="verificationFile"
+                    accept=".pdf,application/pdf" required>
+
+                <button type="submit" class="btn primary-btn">
+                    Verify Certificate
+                </button>
+            </form>
+
+            <div id="verificationResult" class="message"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CertiChain | Blockchain-Based Digital Certificate Verification System</p>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+<script src="js/contract.js"></script>
+<script src="js/app.js"></script>
+<script src="js/verify.js"></script>
+</body>
+</html>

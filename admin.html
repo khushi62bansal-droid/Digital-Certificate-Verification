@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | CertiChain</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Certi<span>Chain</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="verify.html">Verify Certificate</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <div class="dashboard-heading">
+            <p class="tagline">ADMINISTRATION</p>
+            <h1>Admin Dashboard</h1>
+            <p>Issue and manage digital certificates securely.</p>
+        </div>
+
+        <section class="form-card">
+            <h2>Issue New Certificate</h2>
+            <p class="form-description">
+                Enter certificate details and upload the certificate PDF.
+            </p>
+
+            <form id="issueForm">
+                <label for="certificateId">Certificate ID</label>
+                <input type="text" id="certificateId"
+                    placeholder="Example: CERT002" required>
+
+                <label for="studentName">Student Name</label>
+                <input type="text" id="studentName"
+                    placeholder="Enter student name" required>
+
+                <label for="certificateFile">Certificate PDF</label>
+                <input type="file" id="certificateFile"
+                    accept=".pdf,application/pdf" required>
+
+                <button type="submit" class="btn primary-btn">
+                    Issue Certificate
+                </button>
+            </form>
+
+            <div id="issueMessage" class="message"></div>
+        </section>
+
+        <section class="form-card">
+            <h2>Revoke Certificate</h2>
+            <p class="form-description">
+                Enter the certificate ID to revoke an issued certificate.
+            </p>
+
+            <form id="revokeForm">
+                <label for="revokeHash">Certificate Hash</label>
+                <input type="text" id="revokeHash"
+                    placeholder="Enter certificate SHA-256 hash" required>
+
+                <button type="submit" class="btn primary-btn">
+                    Revoke Certificate
+                </button>
+            </form>
+
+            <div id="revokeMessage" class="message"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CertiChain | Blockchain-Based Digital Certificate Verification System</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+<script src="js/contract.js"></script>
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
